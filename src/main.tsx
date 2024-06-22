@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import useGetVideosListLoader from "./loaders/useGetVideosList";
 import App from "./App.tsx";
+import { VideoDetails } from "./pages/videoDetails.tsx";
 import "./index.css";
 
 const queryClient = new QueryClient();
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/video-details/:id",
-        element: <div>Video details</div>,
+        element: <VideoDetails />,
     },
     {
         path: "/add-video",
