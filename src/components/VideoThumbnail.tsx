@@ -7,7 +7,12 @@ interface IProps {
 export const VideoThumbnail = ({ item }: IProps) => {
     return (
         <div>
-            <img src={Poster} title={item.title} alt={item.title} />
+            <img
+                className={`${item.video_url || "opacity_05"}`}
+                src={Poster}
+                title={item.title}
+                alt={item.title}
+            />
         </div>
     );
 };

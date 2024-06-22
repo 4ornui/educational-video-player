@@ -15,5 +15,7 @@ export interface IVideosListResponse {
 }
 
 export interface IVideoResponse {
-    video: IVideoDetails;
+    data: {
+        video: IVideoDetails;
+    };
 }
