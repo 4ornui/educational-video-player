@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import useVideosListLoader from "./loaders/useVideosList.tsx";
 import useVideoDetailesLoader from "./loaders/useVideoDetailesLoader.tsx";
+import { addCommentAction } from "./actions/addCommentAction.ts";
 import { MainPage } from "./pages/mainPage.tsx";
 import App from "./App.tsx";
 import { VideoDetails } from "./pages/videoDetails.tsx";
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
                 path: "/video-details/:id",
                 element: <VideoDetails />,
                 loader: useVideoDetailesLoader,
+                action: addCommentAction,
             },
             {
                 path: "/add-video",
