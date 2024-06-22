@@ -1,12 +1,13 @@
 import axios from "axios";
 import { defer } from "react-router-dom";
+import { BASE_URL, USER_ID } from "../config";
 
 import { IVideosListResponse } from "../interfaces/IVideos";
 
 async function useGetVideosList() {
     return await axios({
         method: "get",
-        url: `https://take-home-assessment-423502.uc.r.appspot.com/api/videos?user_id=1`,
+        url: `${BASE_URL}/api/videos?user_id=${USER_ID}`,
     }).then(({ data }: IVideosListResponse) => {
         return { videos: data.videos };
     });
