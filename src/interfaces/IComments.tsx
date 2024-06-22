@@ -11,3 +11,8 @@ export interface ICommentsListResponse {
         comments: ICommentDetails[];
     };
 }
+export interface ICreateComment {
+    content: string;
+    user_id: string;
+    video_id: string;
+}

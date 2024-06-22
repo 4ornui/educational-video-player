@@ -68,9 +68,11 @@ header {
 .opacity_05 {
     opacity: 0.5;
 }
-
+.addCommentForm {
+    padding: 40px 10% 0;
+}
 .commentsList {
-    padding: 30px 10%;
+    padding: 20px 10%;
 }
 
 .commentDetailes {
@@ -92,6 +94,34 @@ header {
 .commentDetailes .commentContent {
     color: #0f0f0f;
     font-size: 14px;
+}
+
+.addCommentForm input {
+    border: 0;
+    border-bottom: 1px solid #c6c2c2;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.addCommentForm input:hover,
+.addCommentForm input:focus {
+    border: none;
+    border-bottom: 1px solid #0f0f0f;
+    outline: none;
+}
+.commentBtn {
+    padding-top: 15px;
+    text-align: right;
+}
+.commentBtn button {
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.commentBtn button:hover {
+    background-color: rgb(204, 204, 204);
+    border-radius: 20px;
 }
 
 @media (max-width: 600px) {
