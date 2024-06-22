@@ -6,12 +6,14 @@ import { LoadingVideoPlayer } from "./LoadingVideoPlayer";
 import { timeSince } from "../utils/timeSince";
 import { formatCommentCount } from "../utils/formatCommentCount";
 export const VideoPlayer = () => {
-    let { data } = useLoaderData() as IVideoResponse;
+    let { videoDetailes } = useLoaderData() as {
+        videoDetailes: IVideoResponse;
+    };
     return (
         <div className="videoDetails">
             <Suspense fallback={<LoadingVideoPlayer />}>
                 <Await
-                    resolve={data}
+                    resolve={videoDetailes}
                     children={({ video }) => (
                         <>
                             <video

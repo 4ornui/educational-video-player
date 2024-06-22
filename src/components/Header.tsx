@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import LOGO from "../../public/FULL_LOGO_COLOR.png";
 export const Header = () => {
     return (
         <header>
             <Link to="/">
-                <img src="./FULL_LOGO_COLOR.png" width={150} />
+                <img src={LOGO} width={150} />
             </Link>
         </header>
     );
