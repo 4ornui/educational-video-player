@@ -7,5 +7,7 @@ export interface ICommentDetails {
 }
 
 export interface ICommentsListResponse {
-    comments: ICommentDetails[];
+    data: {
+        comments: ICommentDetails[];
+    };
 }
