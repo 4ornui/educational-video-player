@@ -1,5 +1,10 @@
+header {
+    background-color: #fbfafa;
+    padding: 10px;
+    margin-bottom: 35px;
+}
 .addBtn {
-    padding: 10px 0 20px;
+    padding: 10px 0 30px;
     text-align: right;
 }
 .addBtn a {
@@ -36,6 +41,29 @@
     color: #606060;
     display: flex;
     justify-content: space-between;
+}
+.videoDetails {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+}
+.videoDetails .title {
+    font: 1.5rem/3rem "Arial";
+    color: #0f0f0f;
+    height: 45px;
+}
+.videoDetails .info {
+    color: #606060;
+    display: flex;
+    justify-content: space-between;
+}
+.videoPlayer {
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 100%;
+}
+.opacity_05 {
+    opacity: 0.5;
 }
 
 @media (max-width: 600px) {

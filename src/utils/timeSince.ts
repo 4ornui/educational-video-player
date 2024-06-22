@@ -1,4 +1,7 @@
 export function timeSince(publishedDate: string) {
+    if (!publishedDate) {
+        return "Loading...";
+    }
     const now = new Date();
     const date = new Date(publishedDate);
     const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);

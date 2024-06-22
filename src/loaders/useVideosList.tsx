@@ -4,7 +4,7 @@ import { BASE_URL, USER_ID } from "../config";
 
 import { IVideosListResponse } from "../interfaces/IVideos";
 
-async function useGetVideosList() {
+async function useVideosList() {
     return await axios({
         method: "get",
         url: `${BASE_URL}/api/videos?user_id=${USER_ID}`,
@@ -13,8 +13,8 @@ async function useGetVideosList() {
     });
 }
 
-export default async function useGetVideosListLoader() {
+export default async function useVideosListLoader() {
     return defer({
-        data: useGetVideosList(),
+        data: useVideosList(),
     });
 }
