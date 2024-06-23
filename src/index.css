@@ -55,6 +55,11 @@ header {
     color: #0f0f0f;
     height: 45px;
 }
+.videoDetails .description {
+    font: 1rem/1.5rem "Arial";
+    color: #444;
+    min-height: 45px;
+}
 .videoDetails .info {
     color: #606060;
     display: flex;
@@ -122,6 +127,14 @@ header {
 .commentBtn button:hover {
     background-color: rgb(204, 204, 204);
     border-radius: 20px;
+}
+.field {
+    margin: 0;
+    position: relative;
+}
+.field .required {
+    position: absolute;
+    left: -10px;
 }
 
 @media (max-width: 600px) {

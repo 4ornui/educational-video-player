@@ -25,6 +25,9 @@ export const VideoPlayer = () => {
                             ></video>
 
                             <div className="title">{video.title}</div>
+                            <div className="description">
+                                {video.description}
+                            </div>
                             <div className="info">
                                 <div className="timeSince">
                                     {formatCommentCount(video.num_comments)}

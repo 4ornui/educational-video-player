@@ -48,41 +48,53 @@ export const AddVideoPage = () => {
         <form onSubmit={handleSubmit} className="addCommentForm">
             <div>
                 {isCreatMode && (
-                    <input
-                        name="videoUrl"
-                        type="text"
-                        placeholder="Add Video URL..."
-                        value={state.video_url}
-                        onChange={handleChange("video_url")}
-                        required
-                    />
+                    <p className="field">
+                        <span className="required">*</span>
+                        <input
+                            name="videoUrl"
+                            type="text"
+                            placeholder="Add video URL..."
+                            value={state.video_url}
+                            onChange={handleChange("video_url")}
+                            required
+                        />
+                    </p>
                 )}
                 {isCreatMode && (
+                    <p className="field">
+                        <span className="required">*</span>
+                        <input
+                            name="userId"
+                            type="text"
+                            placeholder="Add a user id..."
+                            value={state.user_id}
+                            onChange={handleChange("user_id")}
+                            required
+                        />
+                    </p>
+                )}
+                <p className="field">
+                    <span className="required">*</span>
                     <input
-                        name="userId"
+                        name="title"
                         type="text"
-                        placeholder="Add User Id..."
-                        value={state.user_id}
-                        onChange={handleChange("user_id")}
+                        placeholder="Add a title..."
+                        value={state.title}
+                        onChange={handleChange("title")}
                         required
                     />
-                )}
-                <input
-                    name="title"
-                    type="text"
-                    placeholder="Add Title..."
-                    value={state.title}
-                    onChange={handleChange("title")}
-                    required
-                />
-                <input
-                    name="description"
-                    type="text"
-                    placeholder="Add a description..."
-                    value={state.description}
-                    onChange={handleChange("description")}
-                    required
-                />
+                </p>
+                <p className="field">
+                    <span className="required">*</span>
+                    <input
+                        name="description"
+                        type="text"
+                        placeholder="Add a description..."
+                        value={state.description}
+                        onChange={handleChange("description")}
+                        required
+                    />
+                </p>
                 <div className="commentBtn">
                     <button type="submit" name="intent" value="add">
                         {isCreatMode ? "Add" : "Edit"} Video
