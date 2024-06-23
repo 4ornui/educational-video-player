@@ -6,7 +6,7 @@ import { LoadingVideoPlayer } from "./LoadingVideoPlayer";
 import { timeSince } from "../utils/timeSince";
 import { formatCommentCount } from "../utils/formatCommentCount";
 export const VideoPlayer = () => {
-    let { videoDetailes } = useLoaderData() as {
+    const { videoDetailes } = useLoaderData() as {
         videoDetailes: IVideoResponse;
     };
     return (
@@ -22,7 +22,7 @@ export const VideoPlayer = () => {
                                 preload="auto"
                                 poster={Poster}
                                 controls
-                            />
+                            ></video>
 
                             <div className="title">{video.title}</div>
                             <div className="info">

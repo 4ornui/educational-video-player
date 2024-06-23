@@ -4,7 +4,7 @@ import { CommentsList } from "../components/CommentsList";
 import { Button } from "../components/Button";
 
 export const VideoDetails = () => {
-    let { id } = useParams();
+    const { id } = useParams();
     return (
         <>
             <Button href={`/edit-video/${id}`} text="Edit Video" />

@@ -4,7 +4,7 @@ import { BASE_URL } from "../config";
 import { redirect } from "react-router-dom";
 export const addVideoAction = async ({ request, params }: ActionProps) => {
     const { id } = params;
-    let isCreatMode = !id;
+    const isCreatMode = !id;
     const formData = await request.formData();
     const videoUrl = formData.get("video_url");
     const title = formData.get("title");

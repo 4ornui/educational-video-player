@@ -9,17 +9,16 @@ import {
 } from "../reducers/AddVideoReducer";
 
 export const AddVideoPage = () => {
-    let { id } = useParams();
-    let isCreatMode = !id;
+    const { id } = useParams();
+    const isCreatMode = !id;
     let initialFormState = emptyFormState;
+    const response = useLoaderData() as IVideoResponse;
     if (id) {
-        let { data } = useLoaderData() as IVideoResponse;
-
         initialFormState = {
-            user_id: data.video.user_id,
-            description: data.video.description,
-            video_url: data.video.video_url,
-            title: data.video.title,
+            user_id: response.data.video.user_id,
+            description: response.data.video.description,
+            video_url: response.data.video.video_url,
+            title: response.data.video.title,
         };
     }
     const fetcher = useFetcher();

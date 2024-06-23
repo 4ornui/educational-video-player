@@ -1,7 +1,7 @@
 import { VideosListItem } from "./VideosListItem";
 import { IVideosListResponse, IVideoDetails } from "../interfaces/IVideos";
 export const LoadingVideosList = () => {
-    let { data } = {
+    const { data } = {
         data: {
             videos: [{}, {}, {}],
         },
