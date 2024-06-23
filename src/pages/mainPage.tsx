@@ -1,9 +1,9 @@
 import { VideosList } from "../components/VideosList";
-import { AddVideoBtn } from "../components/AddVideoBtn";
+import { Button } from "../components/Button";
 export const MainPage = () => {
     return (
         <>
-            <AddVideoBtn />
+            <Button href="/add-video" text="Add Video" />
             <VideosList />
         </>
     );

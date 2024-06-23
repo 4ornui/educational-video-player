@@ -4,8 +4,8 @@ import { ICreateComment } from "../interfaces/IComments";
 import { BASE_URL } from "../config";
 export const addCommentAction = async ({ request, params }: ActionProps) => {
     const formData = await request.formData();
-    let comment = formData.get("comment");
-    let userId = formData.get("userId");
+    const comment = formData.get("comment");
+    const userId = formData.get("userId");
     await axios.post<ICreateComment>(`${BASE_URL}/api/videos/comments`, {
         content: comment,
         user_id: userId,
