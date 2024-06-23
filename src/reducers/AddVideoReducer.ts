@@ -9,10 +9,9 @@ export type FormAction =
     | { type: "SET_USER_ID"; payload: string }
     | { type: "SET_DESCRIPTION"; payload: string }
     | { type: "SET_VIDEO_URL"; payload: string }
-    | { type: "SET_TITLE"; payload: string }
-    | { type: "RESET_FORM" };
+    | { type: "SET_TITLE"; payload: string };
 
-export const initialFormState: FormState = {
+export const emptyFormState: FormState = {
     user_id: "",
     description: "",
     video_url: "",
@@ -31,8 +30,6 @@ export const formReducer = (
             return { ...state, video_url: action.payload };
         case "SET_TITLE":
             return { ...state, title: action.payload };
-        case "RESET_FORM":
-            return initialFormState;
         default:
             return state;
     }

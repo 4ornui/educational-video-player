@@ -1,13 +1,27 @@
 import { useReducer } from "react";
-import { useFetcher } from "react-router-dom";
+import { useFetcher, useLoaderData, useParams } from "react-router-dom";
+import { IVideoResponse } from "../interfaces/IVideos";
 import {
     FormState,
     FormAction,
-    initialFormState,
+    emptyFormState,
     formReducer,
 } from "../reducers/AddVideoReducer";
 
 export const AddVideoPage = () => {
+    let { id } = useParams();
+    let isCreatMode = !id;
+    let initialFormState = emptyFormState;
+    if (id) {
+        let { data } = useLoaderData() as IVideoResponse;
+
+        initialFormState = {
+            user_id: data.video.user_id,
+            description: data.video.description,
+            video_url: data.video.video_url,
+            title: data.video.title,
+        };
+    }
     const fetcher = useFetcher();
     const [state, dispatch] = useReducer<React.Reducer<FormState, FormAction>>(
         formReducer,
@@ -30,33 +44,36 @@ export const AddVideoPage = () => {
                 method: "post",
             }
         );
-        dispatch({ type: "RESET_FORM" });
     };
     return (
         <form onSubmit={handleSubmit} className="addCommentForm">
             <div>
-                <input
-                    name="videoUrl"
-                    type="text"
-                    placeholder="Add Video URL..."
-                    value={state.video_url}
-                    onChange={handleChange("video_url")}
-                    required
-                />
+                {isCreatMode && (
+                    <input
+                        name="videoUrl"
+                        type="text"
+                        placeholder="Add Video URL..."
+                        value={state.video_url}
+                        onChange={handleChange("video_url")}
+                        required
+                    />
+                )}
+                {isCreatMode && (
+                    <input
+                        name="userId"
+                        type="text"
+                        placeholder="Add User Id..."
+                        value={state.user_id}
+                        onChange={handleChange("user_id")}
+                        required
+                    />
+                )}
                 <input
                     name="title"
                     type="text"
                     placeholder="Add Title..."
                     value={state.title}
                     onChange={handleChange("title")}
-                    required
-                />
-                <input
-                    name="userId"
-                    type="text"
-                    placeholder="Add User Id..."
-                    value={state.user_id}
-                    onChange={handleChange("user_id")}
                     required
                 />
                 <input
@@ -69,7 +86,7 @@ export const AddVideoPage = () => {
                 />
                 <div className="commentBtn">
                     <button type="submit" name="intent" value="add">
-                        Add Video
+                        {isCreatMode ? "Add" : "Edit"} Video
                     </button>
                 </div>
             </div>
