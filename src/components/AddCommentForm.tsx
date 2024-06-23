@@ -39,6 +39,7 @@ export const AddCommentForm = () => {
                     placeholder="Add User Id..."
                     value={userId}
                     onChange={handleUserIdChange}
+                    required
                 />
                 <input
                     name="comment"
@@ -46,6 +47,7 @@ export const AddCommentForm = () => {
                     placeholder="Add a comment..."
                     value={comment}
                     onChange={handleCommentChange}
+                    required
                 />
                 <div className="commentBtn">
                     <button type="submit" name="intent" value="add">

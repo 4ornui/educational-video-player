@@ -5,9 +5,12 @@ import ReactDOM from "react-dom/client";
 import useVideosListLoader from "./loaders/useVideosList.tsx";
 import useVideoDetailesLoader from "./loaders/useVideoDetailesLoader.tsx";
 import { addCommentAction } from "./actions/addCommentAction.ts";
+import { addVideoAction } from "./actions/addVideoAction.ts";
+
 import { MainPage } from "./pages/mainPage.tsx";
 import App from "./App.tsx";
 import { VideoDetails } from "./pages/videoDetails.tsx";
+import { AddVideoPage } from "./pages/addVideoPage.tsx";
 
 import "./index.css";
 
@@ -31,7 +34,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add-video",
-                element: <div>Add details</div>,
+                element: <AddVideoPage />,
+                action: addVideoAction,
             },
             {
                 path: "/edit-video/:id",
