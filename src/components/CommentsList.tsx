@@ -4,7 +4,7 @@ import { ICommentDetails } from "../interfaces/IComments";
 import { CommentsListItem } from "./CommentsListItem";
 import { AddCommentForm } from "./AddCommentForm";
 export const CommentsList = () => {
-    let { comments } = useLoaderData() as { comments: ICommentDetails[] };
+    const { comments } = useLoaderData() as { comments: ICommentDetails[] };
     return (
         <>
             <AddCommentForm />

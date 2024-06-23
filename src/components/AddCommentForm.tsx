@@ -33,22 +33,28 @@ export const AddCommentForm = () => {
     return (
         <form onSubmit={handleSubmit} className="addCommentForm">
             <div>
-                <input
-                    name="userId"
-                    type="text"
-                    placeholder="Add User Id..."
-                    value={userId}
-                    onChange={handleUserIdChange}
-                    required
-                />
-                <input
-                    name="comment"
-                    type="text"
-                    placeholder="Add a comment..."
-                    value={comment}
-                    onChange={handleCommentChange}
-                    required
-                />
+                <p className="field">
+                    <span className="required">*</span>
+                    <input
+                        name="userId"
+                        type="text"
+                        placeholder="Add User Id..."
+                        value={userId}
+                        onChange={handleUserIdChange}
+                        required
+                    />
+                </p>
+                <p className="field">
+                    <span className="required">*</span>
+                    <input
+                        name="comment"
+                        type="text"
+                        placeholder="Add a comment..."
+                        value={comment}
+                        onChange={handleCommentChange}
+                        required
+                    />
+                </p>
                 <div className="commentBtn">
                     <button type="submit" name="intent" value="add">
                         Comment

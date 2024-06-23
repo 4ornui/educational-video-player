@@ -5,7 +5,7 @@ import { Await, useLoaderData } from "react-router-dom";
 import { LoadingVideosList } from "./LoadingVideosList";
 
 export const VideosList = () => {
-    let { data } = useLoaderData() as IVideosListResponse;
+    const { data } = useLoaderData() as IVideosListResponse;
     return (
         <div className="videosList">
             <Suspense fallback={<LoadingVideosList />}>
